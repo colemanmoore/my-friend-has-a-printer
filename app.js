@@ -19,13 +19,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
+  res.render('index', {});
 });
 
 router.get('/print', (req, res) => {
-  socket.io.emit('request-print-job', req.body);
-  console.log('requested print job', req.body)
-  res.redirect('/print', {})
+  socket.io.emit('my-friend-request-print', req.body);
+  console.log('requested print job', req.body);
+  // res.redirect('/print', {});
 });
 
 // router.get('/print', (req, res) => {
