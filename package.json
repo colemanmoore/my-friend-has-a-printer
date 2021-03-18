@@ -1,9 +1,18 @@
 {
   "name": "my-friend-has-a-printer",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "serve": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "nodemonConfig": {
+    "exec": "node ./bin/www",
+    "watch": [
+      "./bin/www/*.js",
+      "./*.js",
+      "./public/stylesheets/*"
+    ]
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,5 +22,8 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

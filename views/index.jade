@@ -1,7 +1,21 @@
 extends layout
 
 block content
-  h1= 'Printer'
-  p Welcome
-  form(action='/print')
-    input(type='submit' value='Alert client')
+
+  div(class='copy')
+    p take a moment of gratitude.
+    p upload a file for your friend to print.
+
+  div(class='upload-form')
+
+    form(action='/print' method='post' id='printer-form')
+
+      label(for='myFile' class='custom-file-upload') Choose file
+        input(type='file' id='myFile' name='filename')
+
+      div(class='file-feedback-container' id='file-feedback')
+
+      input(type='text' id='passcode' name='passcode' class='input' placeholder='passcode')
+
+    div(class='button-container')
+      button(form='printer-form' type='submit' value='send' class='send-button') Send
