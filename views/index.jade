@@ -4,18 +4,20 @@ block content
 
   div(class='copy')
     p take a moment of gratitude.
-    p upload a file for your friend to print.
+    p upload your file.
 
   div(class='upload-form')
 
-    form(action='/print' method='post' id='printer-form')
+    form(action='/print' method='post' id='printer-form' enctype="multipart/form-data")
 
-      label(for='myFile' class='custom-file-upload') Choose file
-        input(type='file' id='myFile' name='filename')
+      label(for='file-to-print' class='custom-file-upload') Choose file
+        input(type='file' id='file-to-print' name='file_to_print')
 
       div(class='file-feedback-container' id='file-feedback')
 
       input(type='text' id='passcode' name='passcode' class='input' placeholder='passcode')
 
     div(class='button-container')
-      button(form='printer-form' type='submit' value='send' class='send-button') Send
+      button(form='printer-form' type='submit' class='send-button' id='send-to-printer-button' disabled) Send
+
+  script(type='text/javascript', src='/javascripts/index.js')

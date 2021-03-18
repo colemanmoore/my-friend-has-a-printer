@@ -28,15 +28,15 @@ body {
 }
 
 .banner {
-  font-size: 60px;
+  font-size: 2em;
   margin: 1rem 0.25rem;
   padding: 75px 30px 30px;
 }
 
 .copy p {
   margin: 5px;
-  padding: 40px 20px;
-  font-size: 48px;
+  padding: 0.8em 20px;
+  font-size: 1.7em;
 }
 
 .upload-form {
@@ -50,20 +50,12 @@ input[type="file"]{
 }
 
 .custom-file-upload {
-  border-radius: 14px;
+  border-radius: 10px;
   display: inline-block;
   padding: 40px 70px;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 1.2em;
   border: 1px solid #ccc;
-}
-
-.custom-file-upload:focus {
-  border: 2px solid #ccd;
-}
-
-.custom-file-upload:hover {
-  border: 2px solid #ccd;
 }
 
 .custom-file-upload:active {
@@ -72,7 +64,7 @@ input[type="file"]{
 }
 
 .file-feedback-container {
-  font-size: 35px;
+  font-size: 1em;
   margin-top: 15px;
   margin-bottom: 3rem;
 }
@@ -111,15 +103,58 @@ input[type="file"]{
 }
 
 .send-button {
-  font-style: italic;
-  margin-top: 1em;
+  margin-top: 1.5em;
   padding: 0.7em;
   font-size: 1.25em;
   background-color: #fff;
   border: 1px solid #ccd;
-  border-radius: 3px;
+  border-radius: 10px;
+}
+
+.send-button:not([disabled]) {
   cursor: pointer;
 }
 
-.send-button:focus {
+.send-button:not([disabled]):hover {
+  background-color: black;
+  color: white;
+}
+
+.send-button:active {
+  background-color: violet;
+  color: black;
+}
+
+
+@media screen and (min-device-width: 700px) {
+
+  body {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .upload-form {
+    text-align: left;
+    padding-left: initial;
+  }
+
+  .copy p {
+    padding: 0.6em 20px;
+    font-size: 1.2em;
+  }
+
+  .custom-file-upload {
+    font-size: 0.9em;
+    padding: 20px 30px;
+  }
+
+  .input {
+    font-size: 0.9em;
+    width: inherit;
+    margin-left: inherit;
+  }
+
+  .file-feedback-container {
+    font-size: 0.8em;
+  }
 }
